@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         binding.root
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
+        topSheetDialog = TopSheetDialog(this@MainActivity)
         view = View.inflate(applicationContext, R.layout.demo_layout, null)
 
         binding.action.setOnClickListener {
@@ -55,8 +55,24 @@ class MainActivity : AppCompatActivity() {
     private fun actions() {
         val iv = view.findViewById<AppCompatImageView>(R.id.iv)
         iv.setOnClickListener {
+            topSheetDialog.dismiss()
             val intent = Intent(this@MainActivity, TestActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        topSheetDialog.dismissWithAnimation
+    }
+
+    override fun onStart() {
+        super.onStart()
+        topSheetDialog.dismissWithAnimation
+    }
+
+    override fun onResume() {
+        super.onResume()
+        topSheetDialog.dismissWithAnimation
     }
 }
