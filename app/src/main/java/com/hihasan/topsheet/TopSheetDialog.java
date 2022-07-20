@@ -34,6 +34,7 @@ public class TopSheetDialog extends AppCompatDialog {
     private boolean canceledOnTouchOutside = true;
     private boolean canceledOnTouchOutsideSet;
 
+
     public TopSheetDialog(@NonNull Context context) {
         this(context, 0);
     }
@@ -66,7 +67,7 @@ public class TopSheetDialog extends AppCompatDialog {
                 window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
                 window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             }
-            window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         }
     }
 
@@ -184,6 +185,7 @@ public class TopSheetDialog extends AppCompatDialog {
                             @Override
                             public void onClick(View view) {
                                 if (cancelable && isShowing() && shouldWindowCloseOnTouchOutside()) {
+                                    bottomSheet.removeAllViews();
                                     cancel();
                                 }
                             }

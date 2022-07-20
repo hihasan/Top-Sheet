@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="TopSheet_DialogAnimation">
+    <style name="TopSheet_DialogAnimation" parent="Animation.Design.BottomSheetDialog">
         <item name="android:windowEnterAnimation">@anim/slide_out_from_top</item>
         <item name="android:windowExitAnimation">@anim/slide_back_to_top</item>
     </style>
