@@ -18,4 +18,13 @@
         <item name="android:windowEnterAnimation">@anim/slide_out_from_top</item>
         <item name="android:windowExitAnimation">@anim/slide_back_to_top</item>
     </style>
+
+    <style name="Theme.TopSheet.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Seller.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Seller.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

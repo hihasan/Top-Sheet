@@ -1,13 +1,13 @@
 package com.hihasan.topsheet
 
-import android.content.Intent
+
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.DataBindingUtil
 import com.hihasan.topsheet.databinding.ActivityMainBinding
 
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         topSheetDialog = TopSheetDialog(this@MainActivity)
         view = View.inflate(applicationContext, R.layout.demo_layout, null)
 
-        binding.action.setOnClickListener {
+        binding.profileIv.setOnClickListener {
             initViews()
         }
 
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initViews() {
 
-        TopSheetDialog(this@MainActivity).apply {
+        var topSheetDialog = TopSheetDialog(this@MainActivity).apply {
             // Required to have the top-down animation when the app starts showing / dismissin it.
             window?.attributes?.windowAnimations = R.style.TopSheet_DialogAnimation
             setContentView(view ,
@@ -48,16 +48,13 @@ class MainActivity : AppCompatActivity() {
 
 
         }.show()
-
-        topSheetDialog = TopSheetDialog(this@MainActivity)
     }
 
     private fun actions() {
-        val iv = view.findViewById<AppCompatImageView>(R.id.iv)
+        val iv = view.findViewById<TextView>(R.id.save_btn)
         iv.setOnClickListener {
             topSheetDialog.dismiss()
-            val intent = Intent(this@MainActivity, TestActivity::class.java)
-            startActivity(intent)
+            Toast.makeText(applicationContext, "Action Pressed", Toast.LENGTH_SHORT).show()
         }
     }
 

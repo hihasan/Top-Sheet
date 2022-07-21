@@ -6,18 +6,43 @@
     </data>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:cardElevation="15sp"
         app:cardCornerRadius="5sp">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/iv"
+            android:layout_height="wrap_content"
+            android:padding="12sp">
+            <TextView
+                android:id="@+id/header_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menu"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_margin="8sp"/>
+
+            <TextView
+                android:id="@+id/header_body"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:src="@mipmap/ic_launcher_round"/>
+                android:layout_below="@id/header_title"
+                android:textSize="21sp"
+                android:layout_margin="8sp"
+                android:text="Your Operation Menu will be here"/>
+
+            <TextView
+                android:id="@+id/save_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="8sp"
+                android:layout_marginRight="8sp"
+                android:layout_below="@id/header_body"
+                android:text="Save"
+                android:textSize="14sp"
+                android:textColor="@color/black"/>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
